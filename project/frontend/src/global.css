@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dota-black: #0b0b0b;
+  --dota-gray: #1A1A1D;
+  --dota-red: #e62412;
+  --dota-green: #1ec02a;
+
+  /* EsportInsight Coaching Design System */
+  --ei-bg-void: #060810;
+  --ei-bg-base: #0B0E13;
+  --ei-bg-surface: #111520;
+  --ei-bg-elevated: #161C2E;
+  --ei-bg-glass: rgba(255,255,255,0.03);
+
+  --ei-gold: #FFD700;
+  --ei-gold-dim: #C9A227;
+  --ei-gold-glow: rgba(255,215,0,0.15);
+  --ei-gold-border: rgba(255,215,0,0.25);
+
+  --ei-radiant: #4FC38A;
+  --ei-radiant-dim: rgba(79,195,138,0.15);
+  --ei-dire: #E05252;
+  --ei-dire-dim: rgba(224,82,82,0.15);
+
+  --ei-blue: #5B9CF6;
+  --ei-purple: #9B72F8;
+  --ei-amber: #F5A623;
+  --ei-teal: #38C4C4;
+
+  --ei-text-primary: #F0EDE8;
+  --ei-text-secondary: #8A8FA8;
+  --ei-text-muted: #4A4F68;
+  --ei-text-gold: #FFD700;
+
+  --ei-border-subtle: rgba(255,255,255,0.06);
+  --ei-border-gold: rgba(255,215,0,0.2);
+}
+
+/* Coaching Typography Utilities */
+.font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+.font-exo { font-family: 'Exo 2', sans-serif; }
+.font-jetbrains { font-family: 'JetBrains Mono', monospace; }
+
+/* Shimmer / Skeleton */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton-text {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Coaching Layouts */
+.coaching-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 1024px) {
+  .coaching-main-grid { grid-template-columns: 1fr; }
+}
+.drills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+@media (max-width: 1200px) { .drills-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px)  { .drills-grid { grid-template-columns: 1fr; } }
+
+body {
+  @apply bg-dota-black text-gray-200 font-sans antialiased overflow-x-hidden;
+  background-image: linear-gradient(to bottom, rgba(11,11,11,0.9), rgba(11,11,11,0.95)), url('/assets/dota_map_bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3D3D45; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #585863; 
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-fantasy tracking-wider;
+}
+
+/* Global Transition */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Utility Animations */
+.glow-text {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.panel-border {
+  @apply border border-dota-border shadow-panel bg-dota-charcoal/90 backdrop-blur-sm;
+}
