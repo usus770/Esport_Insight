@@ -15,7 +15,14 @@
 
 ## Quick Start
 
-### Step 1: Create Environment File
+### Step 1: Download the Dataset (Optional)
+
+If you need the full training data or CSV datasets for evaluation, download them from Google Drive since they are too large for GitHub:
+[Download Dataset here](https://drive.google.com/drive/folders/1JdXUgHAIklkKAPR01vS4C3RW_vvXTe4g?usp=sharing)
+
+Extract the downloaded data into the `dataset/` folder at the root of the project.
+
+### Step 2: Create Environment File
 
 The `.env` file should already exist. If not, create it in the project root with:
 ```

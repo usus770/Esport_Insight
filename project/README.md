@@ -16,6 +16,14 @@ A FastAPI service implementing the first 5 functionalities for real-time Dota 2 
 
 - Docker and Docker Compose installed
 
+### Dataset (Optional)
+
+While the application fetches real-time data from the OpenDota API, the training data and CSV files for evaluation are large and therefore not stored in this Git repository. 
+You can download the full dataset from Google Drive:
+[Download Dataset here](https://drive.google.com/drive/folders/1JdXUgHAIklkKAPR01vS4C3RW_vvXTe4g?usp=sharing)
+
+Extract the downloaded data into the `dataset/` folder at the root of the project.
+
 ### Setup
 
 1. Create the environment file `.env` in the project root:
